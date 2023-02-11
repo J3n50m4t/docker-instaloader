@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+  instaloader:
+    container_name: HighSpeedTrain
+    build: .
+    environment:
+      - SLEEP_DURATION=3600
+    volumes:
+      - ./download:/download
+      - ./il_targets/:/il_targets
+      - ./il_args/:/il_args
+    restart: unless-stopped
